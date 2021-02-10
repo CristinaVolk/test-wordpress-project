@@ -1,0 +1,32 @@
+@import url("http://fonts.cdnfonts.com/css/gilroy-bold");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vw;
+  width: 100vw;
+  background-color: #ebeced;
+  font-family: "Gilroy-Light", sans-serif;
+}
+
+#root {
+  height: 100vw;
+  width: 100vw;
+  font-size: 1.25em;
+  overflow-x: hidden;
+  cursor: default;
+}
+
+.main-container {
+  height: 100vw;
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0;
+  background-color: #ebeced;
+}
