@@ -13,22 +13,51 @@ const textData = {
   title: "Motorcycle",
 };
 let dataArray = [
-  { image: "https://zos.alipayobjects.com/rmsportal/DGOtoWASeguMJgV.png" },
-  { image: "https://zos.alipayobjects.com/rmsportal/BXJNKCeUSkhQoSS.png" },
-  { image: "https://zos.alipayobjects.com/rmsportal/TDIbcrKdLWVeWJM.png" },
-  { image: "https://zos.alipayobjects.com/rmsportal/SDLiKqyfBvnKMrA.png" },
-  { image: "https://zos.alipayobjects.com/rmsportal/UcVbOrSDHCLPqLG.png" },
-  { image: "https://zos.alipayobjects.com/rmsportal/QJmGZYJBRLkxFSy.png" },
-  { image: "https://zos.alipayobjects.com/rmsportal/PDiTkHViQNVHddN.png" },
-  { image: "https://zos.alipayobjects.com/rmsportal/beHtidyjUMOXbkI.png" },
-  { image: "https://zos.alipayobjects.com/rmsportal/vJcpMCTaSKSVWyH.png" },
-  { image: "https://zos.alipayobjects.com/rmsportal/dvQuFtUoRmvWLsZ.png" },
-  { image: "https://zos.alipayobjects.com/rmsportal/QqWQKvgLSJaYbpr.png" },
-  { image: "https://zos.alipayobjects.com/rmsportal/pTfNdthdsUpLPLJ.png" },
+  {
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ5gjmBzpYGStVtt6FIkua0MwkhfebY6AfMQ&usqp=CAU",
+  },
+  { image: "http://leusdiv.ru/wp-content/uploads/2012/08/yubti.jpg" },
+  { image: "https://data.whicdn.com/images/225888478/original.gif" },
+  {
+    image: "https://ak.picdn.net/shutterstock/videos/7343305/thumb/6.jpg",
+  },
+  {
+    image:
+      "https://st03.kakprosto.ru//images/article/2011/4/6/1_525512a50289b525512a5028d8.jpg",
+  },
+  {
+    image:
+      "https://st.depositphotos.com/2590737/2930/i/600/depositphotos_29305907-stock-photo-young-attractive-man-face-looking.jpg",
+  },
+  {
+    image:
+      "https://sun-technology.ru/wp-content/uploads/2015/05/pochemu_my1.jpg",
+  },
+  {
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfbv0pVJ6dFfXQh5HT_ySK5MKu0nwcJNK4dQ&usqp=CAU",
+  },
+  {
+    image:
+      "https://image.freepik.com/fotos-gratis/feche-o-homem-olhando-para-cima_13339-159123.jpg",
+  },
+  {
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjqKE1jlxRRZgnkhEeFSiBEKDEfOrmFJSxqg&usqp=CAU",
+  },
+  {
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgYjiFLRPKuEp1SGlwUsKdP2ifdSTWWCsiBg&usqp=CAU",
+  },
+  {
+    image:
+      "https://thumbs.dreamstime.com/b/%D0%B6%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B5-%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D1%8B%D0%B5-%D0%B3-%D0%B0%D0%B7%D0%B0-80907949.jpg",
+  },
 ];
 dataArray = dataArray.map((item) => ({ ...item, ...textData }));
 
-export class PicDetailsDemo extends React.Component {
+export class MotionGallery extends React.Component {
   static propTypes = {
     className: PropTypes.string,
   };
@@ -161,7 +190,10 @@ export class PicDetailsDemo extends React.Component {
                 left: isRight ? "50%" : "0%",
               },
             ]}
-            leave={{ ease: "easeInOutCubic", left: isRight ? "50%" : "0%" }}
+            leave={{
+              ease: "easeInOutCubic",
+              left: isRight ? "50%" : "0%",
+            }}
             component=''
           >
             {isOpen && (
@@ -188,8 +220,8 @@ export class PicDetailsDemo extends React.Component {
     return (
       <div className='gallery-container'>
         <QueueAnim type='bottom' className={`${this.props.className}-title`}>
-          <h1 key='h1'>Motion Design</h1>
-          <p key='p'>The react animation solution</p>
+          <h1 key='h1'>We are a passionate team</h1>
+          <p key='p'>Explore our cores</p>
         </QueueAnim>
         <QueueAnim
           delay={this.getDelay}

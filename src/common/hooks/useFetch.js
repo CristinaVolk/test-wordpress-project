@@ -6,7 +6,6 @@ const queryString = (params) =>
     .join("&");
 
 const createUrl = (url, queryOptions) => {
-  console.log(queryOptions);
   return url + "?" + queryString(queryOptions);
 };
 

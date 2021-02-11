@@ -7,7 +7,7 @@ export default function SideBarBottomLeft({ pageWrapId, outerContainerId }) {
       <div className={styles.sideBarBottomItem}>
         <span className={styles.lineContainer}>
           <p className={styles.line}></p>
-          <span>Scroll</span>
+          <span>Switch</span>
         </span>
         <span>to navigate</span>
       </div>
