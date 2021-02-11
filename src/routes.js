@@ -4,7 +4,7 @@ import MainPage from "./pages/main-page/index";
 
 const CoursesPage = React.lazy(() => import("./pages/courses-page/"));
 const CoursePage = React.lazy(() => import("./pages/course-page/"));
-const BrandsPage = React.lazy(() => import("./pages/BrandsPage"));
+const BrandsPage = React.lazy(() => import("./pages/brands-page/"));
 const AboutPage = React.lazy(() => import("./pages/about-page/"));
 
 export const useRoutes = () => {

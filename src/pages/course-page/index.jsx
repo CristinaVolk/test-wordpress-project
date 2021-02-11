@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useComponent } from "./hook";
 import "./styles.css";
 
@@ -17,7 +17,7 @@ export default function CoursePage() {
       <div className='course-page-wrapper'>
         {response && (
           <div className='course-page-container'>
-            <Link to='/courses'>Go Back</Link>
+            <NavLink to='/courses'>Go Back</NavLink>
             <hr></hr>
             <h1>
               <strong>{response.title.rendered}</strong>

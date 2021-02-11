@@ -8,14 +8,12 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100vw;
   width: 100vw;
   background-color: #ebeced;
   font-family: "Gilroy-Light", sans-serif;
 }
 
 #root {
-  height: 100vw;
   width: 100vw;
   font-size: 1.25em;
   overflow-x: hidden;
