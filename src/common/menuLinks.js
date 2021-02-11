@@ -16,7 +16,7 @@ export const menuContent = [
   },
   {
     id: "03",
-    text: "explore careers",
-    address: "/careers",
+    text: "explore courses",
+    address: "/courses",
   },
 ];

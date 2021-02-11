@@ -86,6 +86,12 @@
   right: 5px;
 }
 
+.spinner {
+  position: absolute;
+  top: 5%;
+  right: 20%;
+}
+
 @media screen and (max-width: 414px) {
   .details-switch-demo {
     transform: scale(0.6) translateX(12px);

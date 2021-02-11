@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function CareersPage() {
+export default function AboutPage() {
   return <div></div>;
 }

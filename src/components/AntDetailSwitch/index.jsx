@@ -2,8 +2,10 @@ import React from "react";
 import BannerAnim from "rc-banner-anim";
 import QueueAnim from "rc-queue-anim";
 import { TweenOneGroup } from "rc-tween-one";
+import { Link } from "react-router-dom";
 import { useComponent } from "./hook";
 import Icon from "antd/lib/icon";
+import { Spin } from "antd";
 import "./styles.css";
 
 const Element = BannerAnim.Element;
@@ -11,6 +13,7 @@ const className = "details-switch-demo";
 
 export default function AntDetailSwitch() {
   const {
+    loading,
     dataArray,
     showInt,
     delay,
@@ -46,8 +49,19 @@ export default function AntDetailSwitch() {
     </Element>
   ));
 
+  const CourseItem = ({ item }) => {
+    const { course_id, title, content, background } = item;
+    return (
+      <>
+        <h1 key='h1'>{title}</h1>
+        <em key='em' style={{ background }} />
+        <p dangerouslySetInnerHTML={{ __html: content }} key='p'></p>
+        <Link to={`/courses/course/${course_id}`}>Course Review</Link>
+      </>
+    );
+  };
+
   const textChildren = dataArray.map((item, i) => {
-    const { title, content, background } = item;
     return (
       <Element key={i}>
         <QueueAnim
@@ -55,13 +69,13 @@ export default function AntDetailSwitch() {
           duration={1000}
           delay={[!i ? delay + 500 : 800, 0]}
         >
-          <h1 key='h1'>{title}</h1>
-          <em key='em' style={{ background }} />
-          <p dangerouslySetInnerHTML={{ __html: content }} key='p'></p>
+          <CourseItem item={item} />
         </QueueAnim>
       </Element>
     );
   });
+
+  console.log(loading);
 
   return (
     <div
@@ -83,19 +97,26 @@ export default function AntDetailSwitch() {
         >
           {imgChildren}
         </BannerAnim>
-        <BannerAnim
-          prefixCls={`${className}-text-wrapper`}
-          sync
-          type='across'
-          duration={1000}
-          arrow={false}
-          thumb={false}
-          ease='easeInOutExpo'
-          ref={bannerText}
-          dragPlay={false}
-        >
-          {textChildren}
-        </BannerAnim>
+
+        {loading ? (
+          <div className='spinner'>
+            <Spin tip='Loading...' size='large' />
+          </div>
+        ) : (
+          <BannerAnim
+            prefixCls={`${className}-text-wrapper`}
+            sync
+            type='across'
+            duration={1000}
+            arrow={false}
+            thumb={false}
+            ease='easeInOutExpo'
+            ref={bannerText}
+            dragPlay={false}
+          >
+            {textChildren}
+          </BannerAnim>
+        )}
         <TweenOneGroup
           enter={{ opacity: 0, type: "from" }}
           leave={{ opacity: 0 }}

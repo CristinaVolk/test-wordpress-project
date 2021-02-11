@@ -2,9 +2,10 @@ import React, { Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
 import MainPage from "./pages/main-page/index";
 
-const AboutPage = React.lazy(() => import("./pages/about-page/AboutPage"));
+const CoursesPage = React.lazy(() => import("./pages/courses-page/"));
+const CoursePage = React.lazy(() => import("./pages/course-page/"));
 const BrandsPage = React.lazy(() => import("./pages/BrandsPage"));
-const CareersPage = React.lazy(() => import("./pages/CareersPage"));
+const AboutPage = React.lazy(() => import("./pages/AboutPage"));
 
 export const useRoutes = () => {
   return (
@@ -15,7 +16,8 @@ export const useRoutes = () => {
         </Route>
         <Route path='/about' exact component={AboutPage} />
         <Route path='/brands' exact component={BrandsPage} />
-        <Route path='/careers' exact component={CareersPage} />
+        <Route path='/courses' exact component={CoursesPage} />
+        <Route path='/courses/course/:id' exact component={CoursePage} />
       </Switch>
     </Suspense>
   );
