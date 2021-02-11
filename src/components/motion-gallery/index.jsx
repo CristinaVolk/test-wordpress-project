@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import QueueAnim from "rc-queue-anim";
+import PropTypes from "prop-types";
 import TweenOne, { TweenOneGroup } from "rc-tween-one";
 import Icon from "antd/lib/icon";
 import "./styles.css";
@@ -27,47 +28,65 @@ let dataArray = [
 ];
 dataArray = dataArray.map((item) => ({ ...item, ...textData }));
 
-export default function PicDetailsDemo() {
-  const className = "pic-details-demo";
-  const [picOpen, setPicOpen] = useState({});
+export class PicDetailsDemo extends React.Component {
+  static propTypes = {
+    className: PropTypes.string,
+  };
 
-  const onImgClick = (_event, i) => {
-    const picToOpen = picOpen;
-    Object.keys(picToOpen).forEach((key) => {
-      if (key !== i && picToOpen[key]) {
-        picToOpen[key] = false;
+  static defaultProps = {
+    className: "pic-details-demo",
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      picOpen: {},
+    };
+  }
+
+  onImgClick = (e, i) => {
+    const { picOpen } = this.state;
+    Object.keys(picOpen).forEach((key) => {
+      if (key !== i && picOpen[key]) {
+        picOpen[key] = false;
       }
     });
-    picToOpen[i] = true;
-    setPicOpen(picToOpen);
+    picOpen[i] = true;
+    this.setState({
+      picOpen,
+    });
   };
 
-  const onClose = (_event, i) => {
-    const openedPic = picOpen;
-    openedPic[i] = false;
-    setPicOpen(openedPic);
+  onClose = (e, i) => {
+    const { picOpen } = this.state;
+    picOpen[i] = false;
+    this.setState({
+      picOpen,
+    });
   };
 
-  const onTweenEnd = (i) => {
-    const onTweenEndPicture = picOpen;
-    delete onTweenEndPicture[i];
-    setPicOpen(onTweenEndPicture);
+  onTweenEnd = (i) => {
+    const { picOpen } = this.state;
+    delete picOpen[i];
+    this.setState({
+      picOpen,
+    });
   };
 
-  const getDelay = (event) => {
-    const i = event.index + (dataArray.length % 4);
+  getDelay = (e) => {
+    const i = e.index + (dataArray.length % 4);
     return (i % 4) * 100 + Math.floor(i / 4) * 100 + 200;
   };
 
-  const getLiChildren = () => {
+  getLiChildren = () => {
     const imgWidth = 110;
     const imgHeight = 76;
     const imgBoxWidth = 130;
     const imgBoxHeight = 96;
     return dataArray.map((item, i) => {
       const { image, title, content } = item;
-      const isEnter = typeof picOpen[i] === "boolean";
-      const isOpen = picOpen[i];
+      const isEnter = typeof this.state.picOpen[i] === "boolean";
+      const isOpen = this.state.picOpen[i];
 
       const left = isEnter ? 0 : imgBoxWidth * (i % 4);
       const imgLeft = isEnter ? imgBoxWidth * (i % 4) : 0;
@@ -90,7 +109,7 @@ export default function PicDetailsDemo() {
             ease: "easeInOutCubic",
             width: imgWidth,
             height: imgHeight,
-            onComplete: onTweenEnd,
+            onComplete: this.onTweenEnd.bind(this, i),
             left: imgBoxWidth * (i % 4),
             top: isTop ? imgBoxHeight : 0,
           }
@@ -119,7 +138,7 @@ export default function PicDetailsDemo() {
         >
           <TweenOne
             component='a'
-            onClick={(e) => onImgClick(e, i)}
+            onClick={(e) => this.onImgClick(e, i)}
             style={{
               left: imgLeft,
               top: imgTop,
@@ -147,14 +166,14 @@ export default function PicDetailsDemo() {
           >
             {isOpen && (
               <div
-                className={`${className}-text-wrapper`}
+                className={`${this.props.className}-text-wrapper`}
                 key='text'
                 style={{
                   left: isRight ? "0%" : "50%",
                 }}
               >
                 <h1>{title}</h1>
-                <Icon type='close' onClick={(e) => onClose(e, i)} />
+                <Icon type='close' onClick={(e) => this.onClose(e, i)} />
                 <em />
                 <p>{content}</p>
               </div>
@@ -165,21 +184,23 @@ export default function PicDetailsDemo() {
     });
   };
 
-  return (
-    <div className='gallery-container'>
-      <QueueAnim type='bottom' className={`${className}-title`}>
-        <h1 key='h1'>Our Brands</h1>
-        <p key='p'>Create your own solution</p>
-      </QueueAnim>
-      <QueueAnim
-        delay={getDelay}
-        component='ul'
-        className={`${className}-image-wrapper`}
-        interval={0}
-        type='bottom'
-      >
-        {getLiChildren()}
-      </QueueAnim>
-    </div>
-  );
+  render() {
+    return (
+      <div className='gallery-container'>
+        <QueueAnim type='bottom' className={`${this.props.className}-title`}>
+          <h1 key='h1'>Motion Design</h1>
+          <p key='p'>The react animation solution</p>
+        </QueueAnim>
+        <QueueAnim
+          delay={this.getDelay}
+          component='ul'
+          className={`${this.props.className}-image-wrapper`}
+          interval={0}
+          type='bottom'
+        >
+          {this.getLiChildren()}
+        </QueueAnim>
+      </div>
+    );
+  }
 }
