@@ -8,6 +8,7 @@ export default function Navbar() {
       <div className={styles.navbar}>
         <img className={styles.logo} src={MCGLogo} alt='Logo' />
       </div>
+      <div className={styles.borderArea}></div>
     </div>
   );
 }

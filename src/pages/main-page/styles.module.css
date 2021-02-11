@@ -1,5 +1,12 @@
-.mainTextContainer {
+.mainPageWrapper {
   height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.mainPageContainer {
+  height: 720px;
   width: 100%;
   color: black;
   font-family: "Gilroy-Bold", sans-serif;
@@ -80,5 +87,9 @@
 
 .mainLabel > div:nth-child(2) {
   padding-top: 27%;
-  border-right: 1px solid gray;
+}
+
+.mainPageFooter {
+  height: 90px;
+  background-color: rgb(12, 12, 12);
 }
