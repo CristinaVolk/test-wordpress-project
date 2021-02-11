@@ -50,12 +50,12 @@ export default function AntDetailSwitch() {
   ));
 
   const CourseItem = ({ item }) => {
-    const { course_id, title, content, background } = item;
+    const { course_id, title, excerpt, background } = item;
     return (
       <>
         <h1 key='h1'>{title}</h1>
         <em key='em' style={{ background }} />
-        <p dangerouslySetInnerHTML={{ __html: content }} key='p'></p>
+        <p dangerouslySetInnerHTML={{ __html: excerpt }} key='p'></p>
         <Link to={`/courses/course/${course_id}`}>Course Review</Link>
       </>
     );

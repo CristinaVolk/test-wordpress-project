@@ -1,6 +1,10 @@
+.course-page-wrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
 .course-page-container {
   width: 70%;
-  position: absolute;
-  top: 20%;
-  left: 20%;
+  margin: 10%;
 }

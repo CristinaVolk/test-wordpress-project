@@ -14,20 +14,24 @@ export default function CoursePage() {
     return <h1>Loading ...</h1>;
   } else {
     return (
-      response && (
-        <div className='course-page-container'>
-          <Link to='/'>Go Back</Link>
-          <hr></hr>
-          <h1>{response.title.rendered}</h1>
-          <h1>
-            <strong>{response.title.rendered}</strong>
-          </h1>
-
-          <div
-            dangerouslySetInnerHTML={{ __html: response.content.rendered }}
-          ></div>
-        </div>
-      )
+      <div className='course-page-wrapper'>
+        {response && (
+          <div className='course-page-container'>
+            <Link to='/courses'>Go Back</Link>
+            <hr></hr>
+            <h1>
+              <strong>{response.title.rendered}</strong>
+            </h1>
+            <hr></hr>
+            <div
+              dangerouslySetInnerHTML={{ __html: response.excerpt.rendered }}
+            ></div>
+            <div
+              dangerouslySetInnerHTML={{ __html: response.content.rendered }}
+            ></div>
+          </div>
+        )}
+      </div>
     );
   }
 }

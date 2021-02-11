@@ -30,9 +30,9 @@ export function useComponent() {
   );
 
   if (response) {
-    textData = response.slice(0, 3).map(({ id, content, title }) => ({
+    textData = response.slice(0, 3).map(({ id, excerpt, title }) => ({
       course_id: id,
-      content: content.rendered,
+      excerpt: excerpt.rendered,
       title: title.rendered,
     }));
 
