@@ -1,0 +1,4 @@
+.aboutPageContainer {
+  display: flex;
+  flex-flow: column;
+}
