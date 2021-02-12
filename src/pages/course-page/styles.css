@@ -1,12 +1,16 @@
 .course-page-wrapper {
   width: 100vw;
   display: flex;
+  flex-flow: column wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .course-page-container {
   width: 70%;
-  margin: 10%;
+  margin: 0 10% 10% 10%;
   position: relative;
   z-index: 2;
+  background: rgb(111, 128, 144, 0.5);
+  padding: 7%;
 }

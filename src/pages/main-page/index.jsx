@@ -1,25 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { ParticleEffect } from "../../components/ParticleEffect";
+import React from "react";
+
 import { useOnResize } from "../../common/hooks/useOnResize.js";
 import LineIcon from "../../assets/lineIcon.png";
 import ArrowIcon from "../../assets/right-arrow-icon.png";
-import { BinaryClock } from "../../components/binary-clock/";
+import { CustomParticleEffect } from "../../components/custom-particle-effect";
 import styles from "./styles.module.css";
 
 const sizeOnChange = 1000;
 
 export default function MainPage() {
   const { isMobile } = useOnResize(sizeOnChange);
-  const [hidden, setHidden] = useState(false);
-
-  useEffect(() => {
-    if (isMobile) {
-      setHidden(true);
-    }
-    return () => {
-      setHidden(false);
-    };
-  }, [isMobile]);
+  const particleOptions = {
+    direction: "top",
+  };
 
   return (
     <div className={styles.mainPageWrapper}>
@@ -43,24 +36,16 @@ export default function MainPage() {
           </div>
         </div>
 
-        {isMobile ? (
-          <div className={styles.mainLabel}>
-            <ParticleEffect
-              content={
-                <>
-                  <div>Human</div>
-                  <div>Engagement</div>
-                </>
-              }
-              hidden={hidden}
-            ></ParticleEffect>
-          </div>
-        ) : (
-          <div className={styles.mainLabel}>
-            <div>Human</div>
-            <div>Engagement</div>
-          </div>
-        )}
+        <CustomParticleEffect
+          content={
+            <div className={styles.mainLabel}>
+              <div>Human</div>
+              <div>Engagement</div>
+            </div>
+          }
+          hidden={isMobile}
+          particleOptions={particleOptions}
+        ></CustomParticleEffect>
       </div>
       <div className={styles.mainPageFooter}></div>
     </div>
