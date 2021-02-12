@@ -10,7 +10,6 @@
 .navbar {
   width: 20vw;
   margin-left: 85px;
-  border-right: 1px solid grey;
   height: 100vh;
 }
 
@@ -19,14 +18,14 @@
   margin-top: 15px;
 }
 
-.borderArea {
-  width: 34%;
-  border-right: 1px solid grey;
-  height: 100vh;
+@media screen and (max-width: 760px) {
+  .navbar {
+    border-right: none;
+  }
 }
 
 @media screen and (max-width: 760px) {
-  .navbar .borderArea {
+  .borderArea {
     border-right: none;
   }
 }
