@@ -3,7 +3,7 @@ import Anime from "react-anime";
 import "./styles.css";
 
 export const AnimeFooter = () => (
-  <div className='anime-container'>
+  <div>
     <Anime
       easing='easeOutElastic'
       loop={true}
