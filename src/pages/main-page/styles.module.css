@@ -5,6 +5,20 @@
   flex-flow: column wrap;
 }
 
+.verticalLineOne {
+  height: 720px;
+  width: 33%;
+  position: absolute;
+  border-right: 1px solid grey;
+}
+
+.verticalLineTwo {
+  height: 720px;
+  width: 70%;
+  position: absolute;
+  border-right: 1px solid grey;
+}
+
 .mainPageContainer {
   height: 720px;
   width: 100%;
@@ -12,7 +26,7 @@
   font-family: "Gilroy-Bold", sans-serif;
   display: flex;
   background-image: url("../../assets/mcg-landing.png");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
   background-color: #ebeced;

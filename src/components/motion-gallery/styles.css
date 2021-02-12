@@ -56,6 +56,7 @@
 .pic-details-demo-image-wrapper li a,
 .pic-details-demo-image-wrapper li a img {
   display: block;
+  height: inherit;
 }
 
 .pic-details-demo-text-wrapper {
