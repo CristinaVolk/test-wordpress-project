@@ -2,8 +2,8 @@ import React from "react";
 import BannerAnim from "rc-banner-anim";
 import QueueAnim from "rc-queue-anim";
 import { TweenOneGroup } from "rc-tween-one";
-import { NavLink } from "react-router-dom";
 import { useComponent } from "./hook";
+import { CourseItem } from "../CourseItem";
 import Icon from "antd/lib/icon";
 import { Spin } from "antd";
 import "./styles.css";
@@ -48,18 +48,6 @@ export function DetailSwitch() {
       </QueueAnim>
     </Element>
   ));
-
-  const CourseItem = ({ item }) => {
-    const { course_id, title, excerpt, background } = item;
-    return (
-      <>
-        <h1 key='h1'>{title}</h1>
-        <em key='em' style={{ background }} />
-        <p dangerouslySetInnerHTML={{ __html: excerpt }} key='p'></p>
-        <NavLink to={`/courses/course/${course_id}`}>Course Review</NavLink>
-      </>
-    );
-  };
 
   const textChildren = dataArray.map((item, i) => {
     return (

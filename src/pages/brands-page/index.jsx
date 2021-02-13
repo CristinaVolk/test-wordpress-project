@@ -1,66 +1,65 @@
 import React from "react";
 import { Stack } from "../../components/stack-cards";
-import "./styles.css";
+import styles from "./styles.module.css";
 
 export default function BrandsPage() {
   const cardsList = [
     {
       image:
-        "https://cdn.pixabay.com/photo/2017/02/18/19/24/we-2078026_960_720.jpg",
-      background: "#52649e",
+        "https://acontecendoaqui.com.br/sites/default/files/santander_icone.jpg",
+      background: "#000000",
     },
 
     {
       image:
-        "https://st2.depositphotos.com/6171908/12016/v/950/depositphotos_120167358-stock-illustration-hand-drawn-typography-lettering-word.jpg",
-
-      background: "#f7f295",
+        "https://imf-d8-prod.s3.us-west-1.wasabisys.com/imgix/blog/BBC_logo.png",
+      background: "#000000",
     },
 
     {
       image:
-        "https://www.healthyyoungmindsinherts.org.uk/sites/default/files/content/help%20button_large.jpg",
-
-      background: "#ee7074",
-    },
-
-    {
-      image: "https://pbs.twimg.com/profile_images/1816531408/TO_Logo.png",
-      background: "#ee7074",
+        "https://filecache.mediaroom.com/mr5mr_expediabrand/177421/EXP_US_Basic_lrg_KO_RGB.jpg",
+      background: "#000000",
     },
 
     {
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRc8XVm2xNKfx0pqGXEPNVxeOs6aFgfJW0kKg&usqp=CAU",
-      background: "#52649e",
+        "https://learning.qinetiq.com/pluginfile.php/1/theme_nebula/loginlogo/1610663033/QinetiQ%20Logo.jpg",
+      background: "#000000",
     },
 
     {
       image:
-        "https://steamuserimages-a.akamaihd.net/ugc/986758262567672818/D2DDCCAA375786E22A1F9C94A61A84ECDBCA62F5/",
-      background: "#f7f295",
+        "https://canalwalk.co.za/storage/app/uploads/public/5b1/156/5d9/thumb_1425_0_0_0_0_auto.png",
+      background: "#000000",
     },
 
     {
       image:
-        "https://st2.depositphotos.com/3591429/5998/i/950/depositphotos_59985099-stock-photo-group-of-hands-holding-word.jpg",
-      background: "#f7f295",
+        "https://therockbury.com/wp-content/uploads/2014/03/river-island-logo.jpg",
+      background: "#000000",
+    },
+
+    {
+      image: "https://mapp.media/wp-content/uploads/2018/02/Loreal-Logo.jpeg",
+      background: "#000000",
     },
 
     {
       image:
-        "https://i.pinimg.com/originals/b5/77/fc/b577fc7ffd8b965adfae519c4a7ddb35.jpg",
-      background: "#ee7074",
+        "https://t3.ftcdn.net/jpg/03/78/82/10/360_F_378821098_0ymQysYoFyYPfO5Q7J5biA1RJPh5ZGsP.jpg",
+      background: "#000000",
     },
 
     {
-      image: "https://thumbs.dreamstime.com/z/ascending-ladder-14286870.jpg",
-      background: "#52649e",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUdI5b4uJvwLdKn_T6FPfsNMY3z8OUq0K-Iw&usqp=CAU",
+      background: "#030303",
     },
   ];
   return (
-    <div className='brands-page-wrapper'>
-      <div className='brands-page-container'>
+    <div className={styles.brandsPageWrapper}>
+      <div className={styles.brandsPageContainer}>
         {cardsList.map(({ image, background }) => (
           <Stack key={image} image={image} background={background} />
         ))}

@@ -1,4 +1,3 @@
-import { useState, useRef } from "react";
 import { useFetch } from "../../common/hooks/useFetch";
 import { useParams } from "react-router-dom";
 

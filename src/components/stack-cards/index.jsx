@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSpring, useSprings, animated, interpolate } from "react-spring";
-import "./styles.css";
+import styles from "./styles.module.css";
 
 export function Stack({ image, background }) {
   const [open, setOpen] = useState(false);
@@ -14,12 +14,13 @@ export function Stack({ image, background }) {
   );
   return (
     <div
-      className='container'
+      className={styles.stackCardsContainer}
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
       {cards.map(({ z, opacity }, index) => (
         <animated.div
+          className={styles.stackCard}
           key={opacity + z + index}
           style={{
             opacity,
@@ -32,6 +33,7 @@ export function Stack({ image, background }) {
         >
           {index === 4 && (
             <animated.img
+              className={styles.stackCardImg}
               style={{
                 transform: f.interpolate([0, 1], ["scale(0.7)", "scale(1)"]),
               }}

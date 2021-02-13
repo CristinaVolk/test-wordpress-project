@@ -1,6 +1,6 @@
 import React from "react";
 import Anime from "react-anime";
-import "./styles.css";
+import styles from "./styles.module.css";
 
 export const AnimeFooter = () => (
   <div>
@@ -11,11 +11,11 @@ export const AnimeFooter = () => (
       direction='alternate'
       delay={(el, index) => index * 270}
       translateX='63rem'
-      scale={[0.75, 0.9]}
+      scale={[0.15, 0.9]}
     >
-      <div className='blue' />
-      <div className='green' />
-      <div className='red' />
+      <div className={styles.first} />
+      <div className={styles.second} />
+      <div className={styles.third} />
     </Anime>
   </div>
 );

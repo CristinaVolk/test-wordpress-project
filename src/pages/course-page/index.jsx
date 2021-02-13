@@ -3,7 +3,7 @@ import { CustomParticleEffect } from "../../components/custom-particle-effect";
 import { NavLink } from "react-router-dom";
 import { useComponent } from "./hook";
 import { useParticleEffect } from "../../components/custom-particle-effect/hook";
-import "./styles.css";
+import styles from "./styles.module.css";
 
 export default function CoursePage() {
   const { response, error, loading } = useComponent();
@@ -18,7 +18,7 @@ export default function CoursePage() {
   }
 
   return (
-    <div className='course-page-wrapper'>
+    <div className={styles.coursePageWrapper}>
       <CustomParticleEffect
         hidden={!loading}
         particleOptions={particleOptions}
@@ -35,7 +35,7 @@ export default function CoursePage() {
       />
 
       {response && !animating && (
-        <div className='course-page-container'>
+        <div className={styles.coursePageContainer}>
           <NavLink to='/courses'>Go Back</NavLink>
           <hr></hr>
           <h1>

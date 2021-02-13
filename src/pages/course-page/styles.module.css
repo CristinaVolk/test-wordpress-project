@@ -1,4 +1,4 @@
-.course-page-wrapper {
+.coursePageWrapper {
   width: 100vw;
   display: flex;
   flex-flow: column wrap;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.course-page-container {
+.coursePageContainer {
   width: 70%;
   margin: 0 10% 10% 10%;
   position: relative;

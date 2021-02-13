@@ -1,11 +1,11 @@
-.container {
+.stackCardsContainer {
   width: 150px;
   height: 150px;
   margin: 15px;
   transform-style: flat;
 }
 
-.container > div {
+.stackCard {
   position: absolute;
   width: 150px;
   height: 150px;
@@ -18,6 +18,6 @@
   cursor: pointer;
 }
 
-.container > div > img {
+.stackCardImg {
   width: 100%;
 }

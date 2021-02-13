@@ -3,59 +3,8 @@ import QueueAnim from "rc-queue-anim";
 import PropTypes from "prop-types";
 import TweenOne, { TweenOneGroup } from "rc-tween-one";
 import Icon from "antd/lib/icon";
+import { motionGaleryContent } from "../../utils/motionGalleryContent";
 import "./styles.css";
-
-const textData = {
-  content:
-    "Taiwan called motorcycle, motor bike [1] or a motorcycle," +
-    " the motorcycle referred to in the mainland, Hong Kong and Southeast" +
-    " Asia known as motorcycles.",
-  title: "Motorcycle",
-};
-let dataArray = [
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ5gjmBzpYGStVtt6FIkua0MwkhfebY6AfMQ&usqp=CAU",
-  },
-  { image: "http://leusdiv.ru/wp-content/uploads/2012/08/yubti.jpg" },
-  { image: "https://data.whicdn.com/images/225888478/original.gif" },
-  {
-    image: "https://ak.picdn.net/shutterstock/videos/7343305/thumb/6.jpg",
-  },
-  {
-    image:
-      "https://st03.kakprosto.ru//images/article/2011/4/6/1_525512a50289b525512a5028d8.jpg",
-  },
-  {
-    image:
-      "https://st.depositphotos.com/2590737/2930/i/600/depositphotos_29305907-stock-photo-young-attractive-man-face-looking.jpg",
-  },
-  {
-    image:
-      "https://sun-technology.ru/wp-content/uploads/2015/05/pochemu_my1.jpg",
-  },
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfbv0pVJ6dFfXQh5HT_ySK5MKu0nwcJNK4dQ&usqp=CAU",
-  },
-  {
-    image:
-      "https://image.freepik.com/fotos-gratis/feche-o-homem-olhando-para-cima_13339-159123.jpg",
-  },
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjqKE1jlxRRZgnkhEeFSiBEKDEfOrmFJSxqg&usqp=CAU",
-  },
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgYjiFLRPKuEp1SGlwUsKdP2ifdSTWWCsiBg&usqp=CAU",
-  },
-  {
-    image:
-      "https://thumbs.dreamstime.com/b/%D0%B6%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B5-%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D1%8B%D0%B5-%D0%B3-%D0%B0%D0%B7%D0%B0-80907949.jpg",
-  },
-];
-dataArray = dataArray.map((item) => ({ ...item, ...textData }));
 
 export class MotionGallery extends React.Component {
   static propTypes = {
@@ -103,7 +52,7 @@ export class MotionGallery extends React.Component {
   };
 
   getDelay = (e) => {
-    const i = e.index + (dataArray.length % 4);
+    const i = e.index + (motionGaleryContent.length % 4);
     return (i % 4) * 100 + Math.floor(i / 4) * 100 + 200;
   };
 
@@ -112,7 +61,7 @@ export class MotionGallery extends React.Component {
     const imgHeight = 76;
     const imgBoxWidth = 130;
     const imgBoxHeight = 96;
-    return dataArray.map((item, i) => {
+    return motionGaleryContent.map((item, i) => {
       const { image, title, content } = item;
       const isEnter = typeof this.state.picOpen[i] === "boolean";
       const isOpen = this.state.picOpen[i];
@@ -221,7 +170,10 @@ export class MotionGallery extends React.Component {
       <div className='gallery-container'>
         <QueueAnim type='bottom' className={`${this.props.className}-title`}>
           <h1 key='h1'>We are a passionate team</h1>
-          <p key='p'>Explore our cores</p>
+          <h4 key='h4'>Explore our cores</h4>
+          <h6 key='h6'>
+            Building Brands, Creating Experiences... Driving Culture
+          </h6>
         </QueueAnim>
         <QueueAnim
           delay={this.getDelay}

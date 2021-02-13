@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useOnResize } from "../../common/hooks/useOnResize.js";
 import LineIcon from "../../assets/lineIcon.png";
 import ArrowIcon from "../../assets/right-arrow-icon.png";
