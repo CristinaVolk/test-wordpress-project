@@ -12,6 +12,7 @@ button:focus {
   flex-flow: column wrap;
   justify-content: space-between;
   font-size: 0.7em;
+  z-index: 11;
 }
 
 .firstChild {
@@ -39,7 +40,7 @@ button:focus {
   margin-bottom: 25px;
 }
 
-.thirdChild > img {
+.socialMediaIcons {
   height: 16px;
   width: 16px;
   margin-top: 19px;
