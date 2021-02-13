@@ -34,14 +34,13 @@ export const useFetch = (url, options = { body: {}, query: {} }) => {
         });
       })
       .catch((error) => {
-        //fetch throws an error only on network failure or if anything prevented the request from completing
         setData({
           response: { status: "network_failure" },
           error: true,
           loading: false,
         });
       });
-  }, [url, JSON.stringify(options)]);
+  }, [url, data, options.body, options.method, options.query, setData]);
 
   return data;
 };
