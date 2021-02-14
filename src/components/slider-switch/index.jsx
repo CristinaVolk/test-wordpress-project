@@ -3,11 +3,11 @@ import BannerAnim from "rc-banner-anim";
 import QueueAnim from "rc-queue-anim";
 import { TweenOneGroup } from "rc-tween-one";
 import { useComponent } from "./hook";
-import { useParticleEffect } from "../../components/custom-particle-effect/hook";
+import { useParticleEffect } from "../custom-particle-effect/hook";
 import { CourseItem } from "../CourseItem";
 import Icon from "antd/lib/icon";
 import { Spin } from "antd";
-import { CustomParticleEffect } from "../../components/custom-particle-effect";
+import { CustomParticleEffect } from "../custom-particle-effect";
 import "./styles.css";
 
 const Element = BannerAnim.Element;

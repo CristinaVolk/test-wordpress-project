@@ -39,17 +39,5 @@ export default function FooterItem({ contentItem }) {
         </div>
       </NavLink>
     </ParticleEffectButton>
-    // <ParticleEffectButton
-    //   hidden={isMobile}
-    //   content={
-    //     <NavLink to={address} className={styles.footerLinkItem}>
-    //       <div className={styles.footerItem}>
-    //         <span>{text}</span>
-    //         <span>{id}</span>
-    //       </div>
-    //     </NavLink>
-    //   }
-    //   particleOptions={particleOptions}
-    // ></ParticleEffectButton>
   );
 }
