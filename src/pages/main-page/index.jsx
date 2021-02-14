@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { useOnResize } from "../../common/hooks/useOnResize.js";
 import LineIcon from "../../assets/lineIcon.png";
 import ArrowIcon from "../../assets/right-arrow-icon.png";
@@ -31,7 +32,9 @@ export default function MainPage() {
 
           <div className={styles.lineFour}>
             <img className={styles.arrowIcon} src={ArrowIcon} alt='arrow' />
-            <p className={styles.textFourLine}>discover mcg</p>
+            <NavLink to={"/about"}>
+              <p className={styles.textFourLine}>discover mcg</p>
+            </NavLink>
           </div>
         </div>
 
