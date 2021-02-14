@@ -40,7 +40,7 @@ export const useFetch = (url, options = { body: {}, query: {} }) => {
           loading: false,
         });
       });
-  }, [url, data, options.body, options.method, options.query, setData]);
+  }, [url, JSON.stringify(options)]);
 
   return data;
 };
