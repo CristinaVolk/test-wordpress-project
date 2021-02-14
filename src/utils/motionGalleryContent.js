@@ -3,7 +3,7 @@ const textData = {
     "Taiwan called motorcycle, motor bike [1] or a motorcycle," +
     " the motorcycle referred to in the mainland, Hong Kong and Southeast" +
     " Asia known as motorcycles.",
-  title: "Motorcycle",
+  title: "Our Mission",
 };
 let dataArray = [
   {

@@ -3,9 +3,11 @@ import BannerAnim from "rc-banner-anim";
 import QueueAnim from "rc-queue-anim";
 import { TweenOneGroup } from "rc-tween-one";
 import { useComponent } from "./hook";
+import { useParticleEffect } from "../../components/custom-particle-effect/hook";
 import { CourseItem } from "../CourseItem";
 import Icon from "antd/lib/icon";
 import { Spin } from "antd";
+import { CustomParticleEffect } from "../../components/custom-particle-effect";
 import "./styles.css";
 
 const Element = BannerAnim.Element;
@@ -13,7 +15,9 @@ const className = "details-switch";
 
 export function DetailSwitch() {
   const {
+    error,
     loading,
+    response,
     dataArray,
     showInt,
     delay,
@@ -24,6 +28,14 @@ export function DetailSwitch() {
     onRight,
     onLeft,
   } = useComponent();
+
+  console.log(dataArray, response);
+
+  const { animating } = useParticleEffect();
+
+  const particleOptions = {
+    direction: "left",
+  };
 
   const imgChildren = dataArray.map((item, index) => (
     <Element
@@ -53,6 +65,7 @@ export function DetailSwitch() {
     return (
       <Element key={i}>
         <QueueAnim
+          className='content-item'
           type='bottom'
           duration={1000}
           delay={[!i ? delay + 500 : 800, 0]}
@@ -62,6 +75,10 @@ export function DetailSwitch() {
       </Element>
     );
   });
+
+  if (error) {
+    return <div>Error occurred during loading data...</div>;
+  }
 
   return (
     <div
@@ -83,26 +100,32 @@ export function DetailSwitch() {
         >
           {imgChildren}
         </BannerAnim>
-
-        {loading ? (
-          <div className={`${className}-spinner`}>
-            <Spin tip='Loading...' size='large' />
+        <div className={"content-wrapper "}>
+          <div className={"particle-container"}>
+            <CustomParticleEffect
+              hidden={!loading}
+              particleOptions={particleOptions}
+              content={<h4>Loading...</h4>}
+            />
           </div>
-        ) : (
-          <BannerAnim
-            prefixCls={`${className}-text-wrapper`}
-            sync
-            type='across'
-            duration={1000}
-            arrow={false}
-            thumb={false}
-            ease='easeInOutExpo'
-            ref={bannerText}
-            dragPlay={false}
-          >
-            {textChildren}
-          </BannerAnim>
-        )}
+
+          {response && !animating && (
+            <BannerAnim
+              prefixCls={`${className}-text-wrapper`}
+              sync
+              type='across'
+              duration={1000}
+              arrow={false}
+              thumb={false}
+              ease='easeInOutExpo'
+              ref={bannerText}
+              dragPlay={false}
+            >
+              {textChildren}
+            </BannerAnim>
+          )}
+        </div>
+
         <TweenOneGroup
           enter={{ opacity: 0, type: "from" }}
           leave={{ opacity: 0 }}

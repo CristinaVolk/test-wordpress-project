@@ -13,10 +13,10 @@
   border-radius: 6px;
   overflow: hidden;
   position: relative;
+  display: flex;
 }
 
-.details-switch-img-wrapper,
-.details-switch-text-wrapper {
+.details-switch-img-wrapper {
   width: 50%;
   display: inline-block;
   height: 100%;
@@ -48,8 +48,29 @@
   left: 50px;
 }
 
+.content-wrapper {
+  width: 50%;
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.content-wrapper h4 {
+  color: black;
+}
+
+.particle-container {
+  display: flex;
+  justify-content: center;
+}
+
 .details-switch-text-wrapper .banner-anim-elem {
   padding: 40px;
+}
+
+.content-item {
+  width: 40%;
+  position: absolute;
+  top: 0;
 }
 
 .details-switch-text-wrapper h1 {
@@ -84,12 +105,6 @@
 
 .details-switch-wrapper .anticon-right {
   right: 5px;
-}
-
-.details-switch-spinner {
-  position: absolute;
-  top: 5%;
-  right: 20%;
 }
 
 @media screen and (max-width: 414px) {
