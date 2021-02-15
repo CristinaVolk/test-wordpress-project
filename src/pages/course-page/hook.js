@@ -7,7 +7,7 @@ export function useComponent() {
   const { response, error, loading } = useFetch(
     `http://localhost:8000/wp-json/wp/v2/posts/${id}`,
     {
-      query: {},
+      query: { per_page: 3 },
     },
   );
 

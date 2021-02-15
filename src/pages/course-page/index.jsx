@@ -1,8 +1,8 @@
 import React from "react";
-import { CustomParticleEffect } from "../../components/custom-particle-effect";
 import { NavLink } from "react-router-dom";
 import { useComponent } from "./hook";
 import { useParticleEffect } from "../../components/custom-particle-effect/hook";
+import { CustomParticleEffect } from "../../components/custom-particle-effect";
 import styles from "./styles.module.css";
 
 export default function CoursePage() {
