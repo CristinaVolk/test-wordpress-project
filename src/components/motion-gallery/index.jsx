@@ -1,20 +1,11 @@
 import React from "react";
 import QueueAnim from "rc-queue-anim";
-import PropTypes from "prop-types";
 import TweenOne, { TweenOneGroup } from "rc-tween-one";
 import Icon from "antd/lib/icon";
 import { motionGaleryContent } from "../../utils/motionGalleryContent";
 import styles from "./styles.module.css";
 
 export class MotionGallery extends React.Component {
-  static propTypes = {
-    className: PropTypes.string,
-  };
-
-  static defaultProps = {
-    className: "gallery-container",
-  };
-
   constructor(props) {
     super(props);
     this.state = {
