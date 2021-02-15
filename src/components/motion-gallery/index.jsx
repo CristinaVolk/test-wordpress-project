@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import TweenOne, { TweenOneGroup } from "rc-tween-one";
 import Icon from "antd/lib/icon";
 import { motionGaleryContent } from "../../utils/motionGalleryContent";
-import "./styles.css";
+import styles from "./styles.module.css";
 
 export class MotionGallery extends React.Component {
   static propTypes = {
@@ -12,7 +12,7 @@ export class MotionGallery extends React.Component {
   };
 
   static defaultProps = {
-    className: "pic-details-demo",
+    className: "gallery-container",
   };
 
   constructor(props) {
@@ -147,7 +147,7 @@ export class MotionGallery extends React.Component {
           >
             {isOpen && (
               <div
-                className={`${this.props.className}-text-wrapper`}
+                className={styles.galleryContainerTextWrapper}
                 key='text'
                 style={{
                   left: isRight ? "0%" : "50%",
@@ -167,8 +167,8 @@ export class MotionGallery extends React.Component {
 
   render() {
     return (
-      <div className='gallery-container'>
-        <QueueAnim type='bottom' className={`${this.props.className}-title`}>
+      <div className={styles.galleryContainer}>
+        <QueueAnim type='bottom' className={styles.galleryContainerTitle}>
           <h1 key='h1'>We are a passionate team</h1>
           <h4 key='h4'>Explore our cores</h4>
           <h6 key='h6'>
@@ -178,7 +178,7 @@ export class MotionGallery extends React.Component {
         <QueueAnim
           delay={this.getDelay}
           component='ul'
-          className={`${this.props.className}-image-wrapper`}
+          className={styles.galleryContainerImageWrapper}
           interval={0}
           type='bottom'
         >

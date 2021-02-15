@@ -1,4 +1,4 @@
-.gallery-container {
+.galleryContainer {
   width: 100vw;
   justify-content: center;
   align-items: center;
@@ -6,60 +6,56 @@
   flex-direction: column;
 }
 
-.pic-details-demo-title {
+.galleryContainerTitle {
   width: 95%;
   margin: 20px auto;
   text-align: center;
 }
 
-.pic-details-demo-title h1 {
+.galleryContainerTitle h1 {
   color: black;
   font-size: 26px;
 }
 
-.pic-details-demo-title p {
+.galleryContainerTitle p {
   color: #878787;
   font-size: 12px;
 }
 
-.pic-details-demo-image-wrapper {
+.galleryContainerImageWrapper {
   position: relative;
   list-style: none;
   width: 500px;
   height: 290px;
 }
 
-.pic-details-demo-image-wrapper li {
+.galleryContainerImageWrapper li {
   width: 110px;
   height: 76px;
   position: absolute;
   z-index: 0;
 }
 
-.pic-details-demo-image-box-shadow {
-  box-shadow: 0 0 0 rgba(140, 140, 140, 0);
-  height: 100%;
-  transition: box-shadow 0.3s;
-}
-
-.pic-details-demo-image-wrapper li.open .pic-details-demo-image-box-shadow {
+.galleryContainerImageWrapper li.open {
   box-shadow: 0 2px 8px rgba(140, 140, 140, 50);
+  border-left: 0.5px solid #878787;
+  border-right: 0.5px solid #878787;
 }
 
-.pic-details-demo-image-wrapper li a {
+.galleryContainerImageWrapper li a {
   width: 110px;
   z-index: 1;
   display: inline-block;
   position: absolute;
 }
 
-.pic-details-demo-image-wrapper li a,
-.pic-details-demo-image-wrapper li a img {
+.galleryContainerImageWrapper li a,
+.galleryContainerImageWrapper li a img {
   display: block;
   height: inherit;
 }
 
-.pic-details-demo-text-wrapper {
+.galleryContainerTextWrapper {
   width: 50%;
   background: #fff;
   padding: 10px 15px;
@@ -69,19 +65,20 @@
   position: absolute;
 }
 
-.pic-details-demo-text-wrapper h1 {
+.galleryContainerTextWrapper h1 {
   font-size: 18px;
   margin: 5px auto;
+  text-transform: uppercase;
 }
 
-.pic-details-demo-text-wrapper i {
+.galleryContainerTextWrapper i {
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
 }
 
-.pic-details-demo-text-wrapper em {
+.galleryContainerTextWrapper em {
   height: 2px;
   width: 60px;
   background: #fa1f4e;
@@ -89,24 +86,25 @@
   display: block;
 }
 
-.pic-details-demo-text-wrapper p {
+.galleryContainerTextWrapper p {
   font-size: 12px;
   margin-top: 10px;
   line-height: 16px;
+  white-space: pre-wrap;
 }
 @media screen and (max-width: 414px) {
-  .pic-details-demo {
+  .galleryContainer {
     transform: scale(0.65) translateX(12px);
     transform-origin: left center;
   }
 }
 @media screen and (max-width: 375px) {
-  .pic-details-demo {
+  .galleryContainer {
     transform: scale(0.6) translateX(7px);
   }
 }
 @media screen and (max-width: 320px) {
-  .pic-details-demo {
+  .galleryContainer {
     transform: scale(0.5) translateX(12px);
   }
 }
