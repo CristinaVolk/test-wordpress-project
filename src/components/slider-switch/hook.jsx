@@ -2,8 +2,8 @@ import { useState, useRef } from "react";
 import { useFetch } from "../../common/hooks/useFetch";
 
 export function useComponent() {
-  let textData = [];
-  let dataArray = [
+  let postContent = [];
+  let postImageContent = [
     {
       pic: "https://i.ytimg.com/vi/bfd8RyAJh6c/maxresdefault.jpg",
       color: "#2D2B2D",
@@ -30,15 +30,15 @@ export function useComponent() {
   );
 
   if (response) {
-    textData = response.slice(0, 3).map(({ id, excerpt, title }) => ({
+    postContent = response.slice(0, 3).map(({ id, excerpt, title }) => ({
       course_id: id,
       excerpt: excerpt.rendered,
       title: title.rendered,
     }));
 
-    dataArray = dataArray.map((item, index) => ({
+    postImageContent = postImageContent.map((item, index) => ({
       ...item,
-      ...textData[index],
+      ...postContent[index],
     }));
   }
 
@@ -85,8 +85,8 @@ export function useComponent() {
       { translateX: [0, -300], opacity: [1, 0] },
     ];
     rightShowInt += 1;
-    if (rightShowInt > dataArray.length - 1) {
-      rightShowInt = dataArray.length - 1;
+    if (rightShowInt > postImageContent.length - 1) {
+      rightShowInt = postImageContent.length - 1;
     }
     setShowInt(rightShowInt);
     setImgAnim(imgAnim);
@@ -98,7 +98,7 @@ export function useComponent() {
     response,
     error,
     loading,
-    dataArray,
+    postImageContent,
     showInt,
     delay,
     imgAnim,

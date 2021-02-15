@@ -18,7 +18,7 @@ export function DetailSwitch() {
     error,
     loading,
     response,
-    dataArray,
+    postImageContent,
     showInt,
     delay,
     imgAnim,
@@ -29,15 +29,13 @@ export function DetailSwitch() {
     onLeft,
   } = useComponent();
 
-  console.log(dataArray, response);
-
   const { animating } = useParticleEffect();
 
   const particleOptions = {
     direction: "left",
   };
 
-  const imgChildren = dataArray.map((item, index) => (
+  const imgChildren = postImageContent.map((item, index) => (
     <Element
       key={index}
       style={{
@@ -61,7 +59,7 @@ export function DetailSwitch() {
     </Element>
   ));
 
-  const textChildren = dataArray.map((item, i) => {
+  const textChildren = postImageContent.map((item, i) => {
     return (
       <Element key={i}>
         <QueueAnim
@@ -83,7 +81,7 @@ export function DetailSwitch() {
   return (
     <div
       className={`${className}-wrapper`}
-      style={{ background: dataArray[showInt].background }}
+      style={{ background: postImageContent[showInt].background }}
     >
       <div className={className}>
         <BannerAnim
@@ -130,7 +128,7 @@ export function DetailSwitch() {
           enter={{ opacity: 0, type: "from" }}
           leave={{ opacity: 0 }}
         >
-          {showInt < dataArray.length - 1 && (
+          {showInt < postImageContent.length - 1 && (
             <>
               <Icon type='right' key='right' onClick={onRight} />
             </>
