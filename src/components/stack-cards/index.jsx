@@ -1,17 +1,11 @@
-import React, { useState } from "react";
-import { useSpring, useSprings, animated, interpolate } from "react-spring";
+import React from "react";
+import { animated, interpolate } from "react-spring";
+import { useComponent } from "./hook";
 import styles from "./styles.module.css";
 
 export function Stack({ image, background }) {
-  const [open, setOpen] = useState(false);
-  const { f, r } = useSpring({ f: open ? 0 : 1, r: open ? -3 : 3 });
-  const cards = useSprings(
-    5,
-    [0, 1, 2, 3, 4].map((i) => ({
-      opacity: 0.2 + i / 5,
-      z: open ? (i / 5) * 80 : 0,
-    })),
-  );
+  const { f, r, cards, setOpen } = useComponent();
+
   return (
     <div
       className={styles.stackCardsContainer}
