@@ -6,14 +6,13 @@ import { useComponent } from "./hook";
 import { useParticleEffect } from "../custom-particle-effect/hook";
 import { CourseItem } from "../CourseItem";
 import Icon from "antd/lib/icon";
-import { Spin } from "antd";
 import { CustomParticleEffect } from "../custom-particle-effect";
 import "./styles.css";
 
 const Element = BannerAnim.Element;
-const className = "details-switch";
+const className = "switch-slider";
 
-export function DetailSwitch() {
+export function SwitchSlider() {
   const {
     error,
     loading,
