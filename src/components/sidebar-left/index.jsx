@@ -5,7 +5,7 @@ import SideBarBottomLeft from "../sidebar-bottom-left";
 import { menuContent } from "../../common/menuLinks";
 import "./styles.css";
 
-export default function SideBarLeft(props) {
+export default function SideBarLeft() {
   return (
     <>
       <Menu>

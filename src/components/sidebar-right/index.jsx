@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import { useComponent } from "./hook";
 import FacebookIcon from "../../assets/facebook-icon.png";
 import InstagramIcon from "../../assets/instagram-icon.png";
 import TwitterIcon from "../../assets/twitter-icon.png";
@@ -6,12 +7,7 @@ import { socialMediaLinks } from "../../utils/socialMediaLinks";
 import styles from "./styles.module.css";
 
 export default function SideBarRight() {
-  const [language, setLanguage] = useState("En");
-
-  const handleClick = (event) => {
-    const newValue = event.target.value === "En" ? "Ru" : "En";
-    setLanguage(newValue);
-  };
+  const { language, handleClick } = useComponent();
 
   return (
     <div className={styles.rightSidebarContainer}>

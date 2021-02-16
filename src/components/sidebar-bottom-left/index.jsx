@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-export default function SideBarBottomLeft({ pageWrapId, outerContainerId }) {
+export default function SideBarBottomLeft() {
   return (
     <div className={styles.sideBar}>
       <div className={styles.sideBarBottomItem}>
