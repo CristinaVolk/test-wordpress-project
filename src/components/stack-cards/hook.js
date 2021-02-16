@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useSpring, useSprings, animated, interpolate } from "react-spring";
+import { useSpring, useSprings } from "react-spring";
 
 export function useComponent() {
   const [open, setOpen] = useState(false);
