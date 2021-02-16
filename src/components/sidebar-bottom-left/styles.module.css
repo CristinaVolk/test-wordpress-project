@@ -37,3 +37,13 @@
   left: 16px;
   bottom: 88px;
 }
+
+@media screen and (max-width: 760px) {
+  .sideBar {
+    width: 30px;
+  }
+  .sideBarBottomItem {
+    position: absolute;
+    left: -10px;
+  }
+}

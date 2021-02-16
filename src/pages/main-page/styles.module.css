@@ -14,9 +14,10 @@
 
 .verticalLineTwo {
   height: 720px;
-  width: 70%;
+  right: 21vw;
   position: absolute;
   border-right: 1px solid grey;
+  margin-right: 125px;
 }
 
 .mainPageContainer {
@@ -108,4 +109,17 @@
 .mainPageFooter {
   height: 90px;
   background-color: rgb(12, 12, 12);
+}
+
+@media screen and (max-width: 660px) {
+  .verticalLineOne,
+  .verticalLineTwo {
+    border-right: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .mainLabel {
+    display: none;
+  }
 }

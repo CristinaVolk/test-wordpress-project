@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { useOnResize } from "../../common/hooks/useOnResize";
+import { useParticleEffect } from "../custom-particle-effect/hook";
 import ParticleEffectButton from "react-particle-effect-button";
-
 import styles from "./styles.module.css";
 
 const sizeOnChange = 760;
@@ -10,17 +10,7 @@ const sizeOnChange = 760;
 export default function FooterItem({ contentItem }) {
   const { id, text, address } = contentItem;
   const { isMobile } = useOnResize(sizeOnChange);
-
-  const [animating, setAnimating] = useState(false);
-
-  const onToggle = () => {
-    if (animating) return;
-    setAnimating(true);
-  };
-
-  const onAnimationComplete = () => {
-    setAnimating(false);
-  };
+  const { onToggle, onAnimationComplete } = useParticleEffect();
 
   return (
     <ParticleEffectButton
