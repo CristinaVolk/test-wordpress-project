@@ -1,14 +1,14 @@
 .galleryContainer {
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10vw;
 }
 
 .galleryContainerTitle {
-  width: 95%;
-  margin: 20px auto;
+  width: 70%;
+  margin-top: 10vw;
   text-align: center;
 }
 
@@ -90,21 +90,23 @@
   font-size: 12px;
   margin-top: 10px;
   line-height: 16px;
-  white-space: pre-wrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre-line;
 }
-@media screen and (max-width: 414px) {
+
+@media screen and (max-width: 610px) {
   .galleryContainer {
-    transform: scale(0.65) translateX(12px);
-    transform-origin: left center;
+    transform: scale(0.7) translateX(12px);
   }
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 430px) {
   .galleryContainer {
     transform: scale(0.6) translateX(7px);
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 400px) {
   .galleryContainer {
-    transform: scale(0.5) translateX(12px);
+    transform: scale(0.45) translateX(25px);
   }
 }
