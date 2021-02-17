@@ -1,3 +1,5 @@
+### The general
+
 In order to provide full setup Wordpress, MySQL & PHPMyadmin with a single command I used the Docker compose file `docker-compose.yaml`.
 
 I have run the command `docker-compose up -d`.
@@ -26,7 +28,7 @@ In the project directory, you can run:
 ### `yarn run start`
 
 Runs the app in the development mode using `wptheme-scripts start`.<br />
-Open [http://localhost:8000]to view it in the browser.
+Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 
 ### `yarn run crastart`
 
