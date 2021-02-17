@@ -1,4 +1,4 @@
-const descriptionsList = [
+export const descriptionsList = [
   {
     content:
       "The MCG aim is to create human experience that empower global organisations using the latest software, Web motion, Design and LXP technologies",

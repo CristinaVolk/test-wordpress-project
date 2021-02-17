@@ -9,8 +9,35 @@ export class MotionGallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: false,
+      usersAvatars: [],
+      error: null,
       picOpen: {},
     };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:8000/wp-json/wp/v2/users", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(async (response) => {
+        const data = await response.json();
+        this.setState({
+          usersAvatars: data,
+          error: !response.ok,
+          loading: false,
+        });
+      })
+      .catch((error) => {
+        this.setState({
+          usersAvatars: null,
+          error: true,
+          loading: false,
+        });
+      });
   }
 
   onImgClick = (e, i) => {
@@ -52,6 +79,16 @@ export class MotionGallery extends React.Component {
     const imgHeight = 76;
     const imgBoxWidth = 130;
     const imgBoxHeight = 96;
+    if (!this.state.loading && this.state.usersAvatars) {
+      const usersContent = this.state.usersAvatars.map((item, index) => {
+        return {
+          title: item.slug,
+          image: item.avatar_urls["96"],
+          content: motionGaleryContent[index].content,
+        };
+      });
+      console.log(usersContent);
+    }
     return motionGaleryContent.map((item, i) => {
       const { image, title, content } = item;
       const isEnter = typeof this.state.picOpen[i] === "boolean";
