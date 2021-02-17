@@ -16,8 +16,8 @@ export default function MainPage() {
 
   return (
     <div className={styles.mainPageWrapper}>
-      <div className={styles.verticalLineOne}></div>
-      <div className={styles.verticalLineTwo}></div>
+      <div className={styles.verticalLines}></div>
+      <div className={[styles.verticalLines, styles.second].join(" ")}></div>
       <div className={styles.mainPageContainer}>
         <div className={styles.leftPartMainContainer}>
           <div className={styles.lineOne}>

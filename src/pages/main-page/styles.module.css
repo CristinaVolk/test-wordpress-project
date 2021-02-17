@@ -5,19 +5,16 @@
   flex-flow: column wrap;
 }
 
-.verticalLineOne {
-  height: 720px;
+.verticalLines {
+  height: 100%;
   width: 33%;
   position: absolute;
+  top: 0;
   border-right: 1px solid grey;
 }
 
-.verticalLineTwo {
-  height: 720px;
-  right: 21vw;
-  position: absolute;
-  border-right: 1px solid grey;
-  margin-right: 125px;
+.second {
+  left: 33%;
 }
 
 .mainPageContainer {
