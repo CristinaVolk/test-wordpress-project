@@ -1,26 +1,41 @@
-1. React Lazy
-2. Scrolling effect
-3. Animations
-4. Wordpress API
+In order to provide full setup Wordpress, MySQL & PHPMyadmin with a single command I used the Docker compose file `docker-compose.yaml`.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I have run the command `docker-compose up -d`.
+
+The Wordpress application is running on the 8000 port.
+The React app is running on the 3000.
+
+The application contains 4 different pages. Different type of animation is added to each one separately.
+I have deviated from the design for the reason that I wanted to show how the information about the courses can be presented since the web project is for e-learning purpose. Along side, the careers opportunities can be displayed in the same way.
+
+### Implemantion and usage of wordpress API:
+
+For authorized requests I have installed the plugin `WordPress JSON Web Token Authentication` and according to the documentation edited my `.htaccess` file. Generated the token using the `/wp-json/jwt-auth/v1/token` endpoint in Postman. For future development token will be stored in a user's session and validated for the POST requests.
+
+The page `About mcg` is supposed to use the avatars of the users registered on the wordpress website. There is fetch request implemented and the data is properly converted to display. However, in order to show the complete animation effect on the page I used the images from the internet.
+
+The page `Our courses` uses the fetch request pulling the posts from the wordpress website.
+
+Additional information:
+Have used the styles.modules.css approach (consider the code looks more neat) and left casual style.css for the components from third-party libs. Partially covered with the tests.
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `yarn run start`
+
+Runs the app in the development mode using `wptheme-scripts start`.<br />
+Open [http://localhost:8000]to view it in the browser.
+
+### `yarn run crastart`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
+### `yarn run cratest`
 
 Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
 
@@ -28,46 +43,3 @@ Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
