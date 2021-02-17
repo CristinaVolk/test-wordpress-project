@@ -109,13 +109,7 @@
 
 @media screen and (max-width: 414px) {
   .switch-slider {
-    transform: scale(0.6) translateX(12px);
-    transform-origin: left center;
-  }
-}
-@media screen and (max-width: 375px) {
-  .switch-slider {
-    transform: scale(0.55) translateX(7px);
+    transform: scale(0.85) translateX(12px);
   }
 }
 @media screen and (max-width: 320px) {

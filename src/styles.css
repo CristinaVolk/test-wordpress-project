@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  white-space: pre-line;
 }
 
 a {
@@ -32,6 +33,8 @@ body {
   font-size: 1.25em;
   overflow-x: hidden;
   cursor: default;
+  position: absolute;
+  top: 0;
 }
 
 .main-container {
