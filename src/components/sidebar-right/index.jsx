@@ -12,14 +12,14 @@ export default function SideBarRight() {
   return (
     <div className={styles.rightSidebarContainer}>
       <button
-        className={styles.firstChild}
+        className={styles.switchLangButton}
         onClick={handleClick}
         value={language}
       >
         {language}
       </button>
-      <div className={styles.secondChild}>Welcome to MCG</div>
-      <div className={styles.thirdChild}>
+      <div className={styles.welcomeText}>Welcome to MCG</div>
+      <div className={styles.socialMediaIconsContainer}>
         <a href={socialMediaLinks.facebook}>
           <img
             src={FacebookIcon}

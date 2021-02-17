@@ -16,7 +16,7 @@ export default function FooterItem({ contentItem }) {
     <ParticleEffectButton
       hidden={isMobile}
       type='rectangle'
-      style='stroke'
+      style={"stroke"}
       size={10}
       direction='top'
       onBegin={onToggle}

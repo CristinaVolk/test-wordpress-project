@@ -5,6 +5,10 @@
   white-space: pre-line;
 }
 
+p {
+  font-family: "Gilroy-Light", sans-serif;
+}
+
 a {
   text-decoration: none;
   color: rgb(14, 13, 13);

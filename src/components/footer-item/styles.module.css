@@ -6,8 +6,6 @@ a.footerLinkItem {
 }
 
 a.footerLinkItem:hover {
-  cursor: pointer;
-  color: black;
   font-weight: 600;
   border-bottom: 1px solid black;
 }

@@ -2,10 +2,10 @@ import React from "react";
 import BannerAnim from "rc-banner-anim";
 import QueueAnim from "rc-queue-anim";
 import { TweenOneGroup } from "rc-tween-one";
+import Icon from "antd/lib/icon";
 import { useComponent } from "./hook";
 import { useParticleEffect } from "../custom-particle-effect/hook";
 import { CourseItem } from "../CourseItem";
-import Icon from "antd/lib/icon";
 import { CustomParticleEffect } from "../custom-particle-effect";
 import "./styles.css";
 
@@ -97,8 +97,8 @@ export function SwitchSlider() {
         >
           {imgChildren}
         </BannerAnim>
-        <div className={"content-wrapper "}>
-          <div className={"particle-container"}>
+        <div className='content-wrapper'>
+          <div className='particle-container'>
             <CustomParticleEffect
               hidden={!loading}
               particleOptions={particleOptions}

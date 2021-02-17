@@ -65,23 +65,16 @@ let teamAvatarList = [
   "http://leusdiv.ru/wp-content/uploads/2012/08/yubti.jpg",
   "https://data.whicdn.com/images/225888478/original.gif",
   "https://ak.picdn.net/shutterstock/videos/7343305/thumb/6.jpg",
-
   "https://st03.kakprosto.ru//images/article/2011/4/6/1_525512a50289b525512a5028d8.jpg",
-
   "https://st.depositphotos.com/2590737/2930/i/600/depositphotos_29305907-stock-photo-young-attractive-man-face-looking.jpg",
-
   "https://sun-technology.ru/wp-content/uploads/2015/05/pochemu_my1.jpg",
-
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfbv0pVJ6dFfXQh5HT_ySK5MKu0nwcJNK4dQ&usqp=CAU",
-
   "https://image.freepik.com/fotos-gratis/feche-o-homem-olhando-para-cima_13339-159123.jpg",
-
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjqKE1jlxRRZgnkhEeFSiBEKDEfOrmFJSxqg&usqp=CAU",
-
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgYjiFLRPKuEp1SGlwUsKdP2ifdSTWWCsiBg&usqp=CAU",
-
   "https://thumbs.dreamstime.com/b/%D0%B6%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B5-%D0%BA%D1%80%D0%B0%D1%81%D0%B8%D0%B2%D1%8B%D0%B5-%D0%B3-%D0%B0%D0%B7%D0%B0-80907949.jpg",
 ];
+
 export const motionGaleryContent = teamAvatarList.map((image, index) => {
   const { content, title } = descriptionsList[index];
   return {
