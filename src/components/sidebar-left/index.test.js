@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
 import SideBarLeft from ".";
@@ -28,12 +28,6 @@ describe("SideBarLeft component", () => {
     const aboutLinkEl = getByText(menuContent[1].text);
     const brandsLinkEl = getByText(menuContent[2].text);
     const coursesLinkEl = getByText(menuContent[3].text);
-    //screen.debug(homeLinkEl);
-    fireEvent(
-      homeLinkEl,
-      new MouseEvent("mouseEnter", { "text-decoration": "underline" }),
-    );
-    fireEvent.mouseEnter(aboutLinkEl);
 
     expect(homeLinkEl).toHaveAttribute("href", menuContent[0].address);
     expect(aboutLinkEl).toHaveAttribute("href", menuContent[1].address);
