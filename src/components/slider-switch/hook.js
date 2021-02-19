@@ -24,12 +24,10 @@ export function useComponent() {
 
   const { response, error, loading } = useFetch(
     "http://localhost:8000/wp-json/wp/v2/posts",
-    {
-      query: {},
-    },
+    {},
   );
 
-  if (response) {
+  if (response && response.length) {
     postContent = response.slice(0, 3).map(({ id, excerpt, title }) => ({
       course_id: id,
       excerpt: excerpt.rendered,

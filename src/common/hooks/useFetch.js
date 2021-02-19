@@ -5,9 +5,8 @@ const queryString = (params) =>
     .map((key) => `${key}=${params[key]}`)
     .join("&");
 
-const createUrl = (url, queryOptions) => {
-  return url + "?" + queryString(queryOptions);
-};
+const createUrl = (url, queryOptions = null) =>
+  queryOptions ? `${url}?${queryString(queryOptions)}` : url;
 
 export const useFetch = (url, options = { body: {}, query: {} }) => {
   const [data, setData] = useState({
@@ -17,7 +16,6 @@ export const useFetch = (url, options = { body: {}, query: {} }) => {
   });
 
   useEffect(() => {
-    setData({ ...data, error: null, loading: true });
     fetch(createUrl(url, options.query), {
       method: options.method || "GET",
       headers: {

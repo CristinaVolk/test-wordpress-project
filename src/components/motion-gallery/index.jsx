@@ -9,7 +9,7 @@ export class MotionGallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
+      loading: true,
       usersAvatars: [],
       error: null,
       picOpen: {},
@@ -79,6 +79,7 @@ export class MotionGallery extends React.Component {
     const imgHeight = 76;
     const imgBoxWidth = 130;
     const imgBoxHeight = 96;
+    //--example of possible fetch request to retrieve the avatars to display --
     if (!this.state.loading && this.state.usersAvatars) {
       const usersContent = this.state.usersAvatars.map((item, index) => {
         return {
@@ -87,8 +88,8 @@ export class MotionGallery extends React.Component {
           content: motionGaleryContent[index].content,
         };
       });
-      console.log(usersContent);
     }
+    //--------------------------------------------------------------------
     return motionGaleryContent.map((item, i) => {
       const { image, title, content } = item;
       const isEnter = typeof this.state.picOpen[i] === "boolean";

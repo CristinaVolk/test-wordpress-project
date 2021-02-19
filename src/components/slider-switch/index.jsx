@@ -106,7 +106,7 @@ export function SwitchSlider() {
             />
           </div>
 
-          {response && !animating && (
+          {response && !animating && !loading && (
             <BannerAnim
               prefixCls={`${className}-text-wrapper`}
               sync

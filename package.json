@@ -5,9 +5,6 @@
     "dependencies": {
         "@ant-design/icons": "^4.4.0",
         "@devloco/react-scripts-wptheme": "^3.4.1-wp.1",
-        "@testing-library/jest-dom": "^5.11.9",
-        "@testing-library/react": "^11.2.5",
-        "@testing-library/user-event": "^7.1.2",
         "antd": "3.9.0",
         "global-jsdom": "^8.0.0-beta.1",
         "rc-banner-anim": "^2.4.5",
@@ -49,6 +46,9 @@
     "homepage": "/wp-content/themes/react_theme",
     "browserLaunchTo": "http://localhost:8000",
     "devDependencies": {
-        "react-particle-effect-button": "^1.0.1"
+        "react-particle-effect-button": "^1.0.1",
+        "@testing-library/jest-dom": "^5.11.9",
+        "@testing-library/react": "^11.2.5",
+        "@testing-library/user-event": "^7.1.2"
     }
 }
