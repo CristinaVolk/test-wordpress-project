@@ -60,7 +60,7 @@ export const descriptionsList = [
   },
 ];
 
-let teamAvatarList = [
+const teamAvatarList = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ5gjmBzpYGStVtt6FIkua0MwkhfebY6AfMQ&usqp=CAU",
   "http://leusdiv.ru/wp-content/uploads/2012/08/yubti.jpg",
   "https://data.whicdn.com/images/225888478/original.gif",
