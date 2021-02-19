@@ -3,7 +3,6 @@ button:focus {
 }
 
 .rightSidebarContainer {
-  width: 4%;
   height: 100%;
   position: fixed;
   right: 0;
@@ -30,6 +29,7 @@ button:focus {
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-right: 1vw;
+  margin-left: 8px;
   line-height: 20px;
   writing-mode: vertical-rl;
 }

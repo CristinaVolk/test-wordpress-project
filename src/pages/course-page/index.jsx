@@ -22,16 +22,7 @@ export default function CoursePage() {
       <CustomParticleEffect
         hidden={!loading}
         particleOptions={particleOptions}
-        content={
-          <h1
-            style={{
-              color: "black",
-              border: "0",
-            }}
-          >
-            Loading...
-          </h1>
-        }
+        content={<h1 className={styles.loading}>Loading...</h1>}
       />
 
       {response && !animating && (
@@ -46,6 +37,7 @@ export default function CoursePage() {
             dangerouslySetInnerHTML={{ __html: response.excerpt.rendered }}
           ></div>
           <div
+            className={styles.courseContent}
             dangerouslySetInnerHTML={{ __html: response.content.rendered }}
           ></div>
         </div>

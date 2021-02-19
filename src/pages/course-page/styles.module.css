@@ -14,3 +14,22 @@
   background: rgb(111, 128, 144, 0.5);
   padding: 7%;
 }
+
+.coursePageContainer > div > p {
+  margin: 0;
+}
+
+.loading {
+  color: black;
+  border: "0";
+}
+
+.courseContent > p > a {
+  word-break: break-word;
+}
+
+@media screen and (max-width: 414px) {
+  .coursePageContainer {
+    margin: 0 10% 10% 19vw;
+  }
+}
