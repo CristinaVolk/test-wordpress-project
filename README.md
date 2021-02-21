@@ -19,7 +19,9 @@ The page `About mcg` is supposed to use the avatars of the users registered on t
 The page `Our courses` uses the fetch request pulling the posts from the wordpress website.
 
 Additional information:
-Have used the styles.modules.css approach (consider the code looks more neat) and left casual style.css for the components from third-party libs. Partially covered with the tests.
+ - Have used the styles.modules.css approach (consider the code looks more neat) and left casual style.css for the components from third-party libs. Partially covered with the tests.
+
+ - The translation has not been realized by me only the button has implemented to switch the language. However, I am able to make it work with the i18n react lib. I have done it in both projects I was helping to develop at work and organisation. In my honest opinion it's a pleasant and easy to use one.
 
 ## Available Scripts
 
